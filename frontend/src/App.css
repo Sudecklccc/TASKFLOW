@@ -1,0 +1,316 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6fb;
+  color: #263248;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Ana sayfa */
+
+.app {
+  width: 90%;
+  max-width: 850px;
+  margin: 55px auto;
+}
+
+/* Üst başlık */
+
+.header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.header h1 {
+  color: #5265d8;
+  font-size: 38px;
+  letter-spacing: 3px;
+  font-weight: 800;
+}
+
+.header p {
+  color: #8790a3;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+/* Görev kartı */
+
+.task-container {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(40, 50, 90, 0.07);
+}
+
+.task-container h2 {
+  font-size: 23px;
+  margin-bottom: 24px;
+  color: #263248;
+}
+
+/* İstatistikler */
+
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 28px;
+}
+
+.statistics div {
+  background: #f4f5ff;
+  padding: 18px 10px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.statistics strong {
+  display: block;
+  font-size: 26px;
+  color: #5265d8;
+  margin-bottom: 5px;
+}
+
+.statistics span {
+  color: #7b8497;
+  font-size: 13px;
+}
+
+/* Görev ekleme alanı */
+
+.task-input {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.task-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid #dce1ed;
+  border-radius: 9px;
+  outline: none;
+  font-size: 14px;
+}
+
+.task-input input:focus {
+  border-color: #5265d8;
+  box-shadow: 0 0 0 3px rgba(82, 101, 216, 0.1);
+}
+
+.task-input button {
+  background: #5265d8;
+  color: white;
+  border: none;
+  padding: 13px 20px;
+  border-radius: 9px;
+  font-weight: 600;
+}
+
+.task-input button:hover {
+  background: #3e50bd;
+}
+
+/* Filtre butonları */
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  background: #f0f2f8;
+  color: #6f7890;
+  border: none;
+  padding: 9px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.filters button:hover {
+  background: #e5e8f5;
+}
+
+.filters button.active {
+  background: #5265d8;
+  color: white;
+}
+
+/* Görev listesi */
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: #f8f9fc;
+  border: 1px solid #edf0f6;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.task-item:hover {
+  border-color: #cbd2f5;
+}
+
+.task-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #5265d8;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.task-item span {
+  flex: 1;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #a0a6b5;
+}
+
+/* Görev düzenleme */
+
+.edit-input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid #5265d8;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* İşlem butonları */
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.task-actions button {
+  background: #e9ecff;
+  color: #5265d8;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.task-actions button:hover {
+  background: #dce1ff;
+}
+
+.task-actions .delete-button {
+  background: #fff0f0;
+  color: #df5252;
+}
+
+.task-actions .delete-button:hover {
+  background: #ffe0e0;
+}
+
+/* Boş liste ve hata mesajları */
+
+.empty {
+  text-align: center;
+  color: #929bad;
+  padding: 25px 10px;
+  font-size: 14px;
+}
+
+.error {
+  color: #d94343;
+  background: #fff0f0;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Alt bilgi */
+
+footer {
+  text-align: center;
+  color: #a0a6b5;
+  font-size: 13px;
+  margin-top: 25px;
+}
+
+/* Telefon ve tablet uyumu */
+
+@media (max-width: 600px) {
+  .app {
+    width: 94%;
+    margin: 25px auto;
+  }
+
+  .task-container {
+    padding: 20px 15px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .statistics {
+    gap: 8px;
+  }
+
+  .statistics div {
+    padding: 14px 5px;
+  }
+
+  .statistics strong {
+    font-size: 22px;
+  }
+
+  .statistics span {
+    font-size: 11px;
+  }
+
+  .task-input {
+    flex-direction: column;
+  }
+
+  .task-input button {
+    width: 100%;
+  }
+
+  .task-item {
+    flex-wrap: wrap;
+  }
+
+  .task-actions {
+    margin-left: 30px;
+  }
+}
